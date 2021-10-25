@@ -47,6 +47,10 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('students.index') }}">{{ __('CRUD') }}</a>
                         </li>  
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('users.index') }}">{{ __('User Data') }}</a>
+                        </li>  
                         @endauth
                         
                         @guest

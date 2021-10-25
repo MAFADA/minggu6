@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">{{ __('STUDENT DATA') }}</div>
+                    <div class="card-header">{{ __('USER DATA') }}</div>
 
                     <div class="card-body">
                         @if (session('status'))
@@ -13,35 +13,27 @@
                                 {{ session('status') }}
                             </div>
                         @endif
-                        
-                        <!-- <p>Cari Data Student :</p>
-                        <form action="/students/search" method="GET">
-                            <input type="text" name="search" placeholder="Search Student .." value="{{ request('search') }}">
-                            <input type="submit" value="Search">
-                        </form> -->
 
                         <table class="table table-responsive table-striped">
                             <thead>
                                 <tr>
-                                    <th>NIM</th>
+                                    <th>Username</th>
                                     <th>Name</th>
-                                    <th>Class</th>
-                                    <th>Deparment</th>
+                                    <th>Email</th>
                                     <th>Action</th>
                                     
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($student as $s)
+                                @foreach($users as $u)
                                 <tr>
-                                    <td>{{ $s->nim }}</td>
-                                    <td>{{ $s->name }}</td>
-                                    <td>{{ $s->class }}</td>
-                                    <td>{{ $s->department }}</td>
+                                    <td>{{ $u->username }}</td>
+                                    <td>{{ $u->name }}</td>
+                                    <td>{{ $u->email }}</td>                                    
                                     <td>
-                                    <form action="/students/{{$s->id}}" method="post">
-                                        <a href="/students/{{$s->id}}" class="btn btn-primary">View</a>                                        
-                                        <a href="/students/{{$s->id}}/edit" class="btn btn-warning">Edit</a>
+                                    <form action="/users/{{$u->id}}" method="post">
+                                        <a href="/users/{{$u->id}}" class="btn btn-primary">View</a>                                        
+                                        <a href="/users/{{$u->id}}/edit" class="btn btn-warning">Edit</a>
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" name="delete" class="btn btn-danger">Delete</button>
@@ -51,7 +43,7 @@
                                 @endforeach
                             </tbody>
                         </table>
-                        <a href="/students/create" class="btn btn-primary">Add Data</a>
+                        <a href="/users/create" class="btn btn-primary">Add Data</a>
                         <br><br>
                     </div>                    
                 </div>               
