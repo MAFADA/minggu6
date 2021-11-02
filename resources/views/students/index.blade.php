@@ -40,11 +40,12 @@
                                     <td>{{ $s->department }}</td>
                                     <td>
                                     <form action="/students/{{$s->id}}" method="post">
-                                        <a href="/students/{{$s->id}}" class="btn btn-primary">View</a>                                        
-                                        <a href="/students/{{$s->id}}/edit" class="btn btn-warning">Edit</a>
+                                        <a href="/students/{{$s->id}}" class="btn btn-primary float-left">Show</a>                                        
+                                        <a href="/students/{{$s->id}}/edit" class="btn btn-primary float-center">Edit</a>
+                                        <a href="/students/detail/{$s->id}" class="btn btn-warning float-right">Nilai</a>
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" name="delete" class="btn btn-danger">Delete</button>
+                                        <button type="submit" name="delete" class="btn btn-danger float-right">Delete</button>
                                     </form>
                                     </td>
                                 </tr>                                
