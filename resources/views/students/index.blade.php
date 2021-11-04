@@ -42,7 +42,7 @@
                                     <form action="/students/{{$s->id}}" method="post">
                                         <a href="/students/{{$s->id}}" class="btn btn-primary float-left">Show</a>                                        
                                         <a href="/students/{{$s->id}}/edit" class="btn btn-primary float-center">Edit</a>
-                                        <a href="/students/detail/{$s->id}" class="btn btn-warning float-right">Nilai</a>
+                                        <a href="/students/{{$s->id}}/detail" class="btn btn-warning float-right">Nilai</a>
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" name="delete" class="btn btn-danger float-right">Delete</button>

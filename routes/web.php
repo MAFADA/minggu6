@@ -26,7 +26,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::resource('students', StudentController::class);
 // Route::get('students/{name}',StudentController::class,'search')->name('search');s
 
-Route::get('students/detail/{id}', [StudentController::class,'detail_nilai'])->name('students.detail');
+Route::get('students/{id}/detail', [StudentController::class,'detail_nilai'])->name('students.detail');
 
 
 Route::resource('users', UserController::class);

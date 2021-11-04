@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Student;
 use App\Models\Kelas;
-use App\Models\Course;
 
 class StudentController extends Controller
 {
@@ -123,10 +122,9 @@ class StudentController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function detail_nilai($id)
-    {
-        $courses= Course::find($id); 
+    {        
         $students= Student::find($id);        
-        return view('students.nilai',['students'=>$students,'courses'=>$courses]);
+        return view('students.nilai',['student'=>$students]);
     }
 
     // public function search(Request $request){

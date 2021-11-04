@@ -12,16 +12,15 @@
             <div class="col-md-8">
             <div>
                 <br><br>
-            </div>
-                        <b>Nama:</b> {{ $students->name }} <br>
-                        <b>NIM: </b> {{ $students->nim }} <br>
-                        <b>Kelas: </b>  {{ $students->kelas->class_name }}  <br>    
-
-                <div class="card">
-                    
-                    <div class="card-header">{{ __('STUDENT DATA') }}</div>
-                    
+            </div>                       
+                <div class="card">                    
+                    <div class="card-header">{{ __('STUDENT DATA') }}</div>                    
                     <div class="card-body">
+
+                        <b>Nama:</b> {{ $student->name }} <br>
+                        <b>NIM: </b> {{ $student->nim }} <br>
+                        <b>Kelas: </b>  {{ $student->kelas->class_name }}  <br>    
+
                         @if (session('status'))
                             <div class="alert alert-success" role="alert">
                                 {{ session('status') }}
@@ -45,14 +44,14 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                
+                                @foreach($student->courses as $sc)
                                 <tr>
-                                    <td>{{ $courses['class_name'] }}</td>
-                                    <td>{{ $courses['sks'] }}</td>
-                                    <td>{{ $courses['semester'] }}</td>
-                                    <td>{{ $courses['nilai'] }}</td>                                
+                                    <td>{{ $sc->course_name }}</td>
+                                    <td>{{ $sc->semester }}</td>
+                                    <td>{{ $sc->sks }}</td>
+                                    <td>{{ $sc->pivot->nilai }}</td>                                
                                 </tr>                                
-                                
+                                @endforeach
                             </tbody>
                         </table>
                         <a href="/students" class="btn btn-primary">Back</a>
