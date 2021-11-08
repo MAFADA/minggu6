@@ -7,6 +7,7 @@
                 <div class="card">
                     <div class="card-header">{{ $student->nim }}</div>
                     <div class="card-body">
+                        <img width="150px" src="{{ asset('storage/'.$student->photo) }}" ><br>
                         Name : {{ $student->name }} <br>
                         Class : {{ $student->kelas->class_name }} <br>
                         Department : {{ $student->department }} <br>
