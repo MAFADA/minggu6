@@ -14,7 +14,7 @@
                         Phone Number : {{ $student->phone_number }} <br>
                         Created at : {{ $student->created_at }} <br>
                         Updated at : {{ $student->updated_at }} <br>
-                    </div>                  
+                    </div>                                      
                 </div>               
             </div>            
         </div>       

@@ -28,5 +28,6 @@ Route::resource('students', StudentController::class);
 
 Route::get('students/{id}/detail', [StudentController::class,'detail_nilai'])->name('students.detail');
 
+Route::get('/students/{id}/report', [StudentController::class,'report']);
 
 Route::resource('users', UserController::class);
