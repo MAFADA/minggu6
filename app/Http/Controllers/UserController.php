@@ -95,4 +95,9 @@ class UserController extends Controller
         $users->delete();
         return redirect()->route('users.index');
     }
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 }

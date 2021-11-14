@@ -20,8 +20,8 @@
                                     <th>Username</th>
                                     <th>Name</th>
                                     <th>Email</th>
-                                    <th>Action</th>
-                                    
+                                    <th>Role</th>
+                                    <th>Action</th>                                    
                                 </tr>
                             </thead>
                             <tbody>
@@ -29,7 +29,8 @@
                                 <tr>
                                     <td>{{ $u->username }}</td>
                                     <td>{{ $u->name }}</td>
-                                    <td>{{ $u->email }}</td>                                    
+                                    <td>{{ $u->email }}</td> 
+                                    <td>{{ $u->role }}</td>                                   
                                     <td>
                                     <form action="/users/{{$u->id}}" method="post">
                                         <a href="/users/{{$u->id}}" class="btn btn-primary">View</a>                                        
